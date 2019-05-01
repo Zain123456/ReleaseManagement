@@ -1,0 +1,97 @@
+<div>
+    <h1>Iteration Form</h1>
+  </div>
+  
+  <br>
+  <h3>Please enter the iteration details</h3>
+  
+  <form (ngSubmit)="form.valid && processForm()" name="form" [formGroup]="form">
+    <input type="hidden" name="iterationId" class="form-control" [(ngModel)]="iteration.iterationId" [ngModelOptions]="{standalone:true}">
+
+  <div class="form_group">
+    <label for="">Title</label>
+    <input type="text" class="form-control" [(ngModel)]="iteration.title" formControlName="title" [ngClass]="{'is-invalid': 
+    form.get('title').touched && form.get('title').invalid}">
+
+    <div class="invalid-feedback">
+        <div>Title is required</div>
+    </div>
+  </div>
+
+  <div class = "form_group">
+    <label for="">Description</label>
+    <input type="text" class="form-control"  [(ngModel)]="iteration.description" formControlName="desc" [ngClass]="{'is-invalid': 
+    form.get('desc').touched && form.get('desc').invalid}"> 
+
+    <div class="invalid-feedback">
+        <div>Description is required</div>
+    </div>
+
+  </div>
+
+  <div class="form_group">
+      <label for="">Start Date</label>
+      <input type="date" class="form-control" [(ngModel)]="iteration.startDate" formControlName="sDate" [ngClass]="{'is-invalid': 
+      form.get('sDate').touched && form.get('sDate').invalid}">
+
+      <div class="invalid-feedback">
+          <div>Start Date is required</div>
+      </div>
+
+  </div>
+
+
+
+  <div class="form_group">
+      <label for="">End Date</label>
+      <input type="date" class="form-control" [(ngModel)]="iteration.endDate" formControlName="eDate" [ngClass]="{'is-invalid': 
+      form.get('eDate').touched && form.get('eDate').invalid}">
+
+      <div class="invalid-feedback">
+          <div>Release Date is required</div>
+      </div>
+
+  </div>
+
+  <div class="form_group">
+    <label for="">Status</label>
+    <select class="form-control" [(ngModel)]="iteration.status" formControlName="status" [ngClass]="{'is-invalid': 
+    form.get('status').touched && form.get('status').invalid}">
+        <option value= "Default">Select Status</option>
+        <option value = "Planned">Planned</option>
+        <option value="Released">Released</option>
+        <option value="Delayed">Delayed</option>
+        <option value="Suspended">Suspended</option>
+        <option value="Resumed">Resumed</option>
+    </select>
+    <div class="invalid-feedback">
+        <div>Status is required</div>
+    </div>
+
+  </div>
+
+  <div class="form_group">
+      <label for="">Type</label>
+      <select class="form-control" [(ngModel)]="iteration.type" formControlName="type" [ngClass]="{'is-invalid': 
+      form.get('type').touched && form.get('type').invalid}">
+          <option value="Default">Select a type</option>
+          <option value="MileStone">MileStone</option>
+          <option value="Build">Build</option>
+          <option value="Major">Major</option>
+          <option value="Minor">Minor</option>
+          <option value="Final">Final</option>
+      </select>
+      <div class="invalid-feedback">
+          <div>Type is required</div>
+      </div>
+
+  </div>
+  
+  
+
+
+
+    <br>
+    <input type="submit" value="Add Iteration" class="btn btn-success">
+</form>
+  

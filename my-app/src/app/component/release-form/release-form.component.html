@@ -1,0 +1,132 @@
+<div>
+    <h1>Release Form</h1>
+  </div>
+  
+  <br>
+  <h3>Please enter the release details</h3>
+  
+  <form (ngSubmit)="form.valid && processForm()" name="form" [formGroup]="form">
+      <input type="hidden" name="releaseId" class="form-control" [(ngModel)]="release.releaseId" [ngModelOptions]="{standalone:true}">
+
+    <div class="form_group">
+      <label for="">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="release.title" formControlName="title" [ngClass]="{'is-invalid': 
+      form.get('title').touched && form.get('title').invalid}">
+
+      <div class="invalid-feedback">
+          <div>Title is required</div>
+      </div>
+    </div>
+  
+    <div class = "form_group">
+      <label for="">Description</label>
+      <input type="text" class="form-control"  [(ngModel)]="release.description" formControlName="desc" [ngClass]="{'is-invalid': 
+      form.get('desc').touched && form.get('desc').invalid}"> 
+
+      <div class="invalid-feedback">
+          <div>Description is required</div>
+      </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Start Date</label>
+        <input type="date" class="form-control" [(ngModel)]="release.startDate" formControlName="sDate" [ngClass]="{'is-invalid': 
+        form.get('sDate').touched && form.get('sDate').invalid}">
+
+        <div class="invalid-feedback">
+            <div>Start Date is required</div>
+        </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Planned Date</label>
+        <input type="date" class="form-control" [(ngModel)]="release.plannedDate" formControlName="pDate" [ngClass]="{'is-invalid': 
+        form.get('pDate').touched && form.get('pDate').invalid}">
+
+        <div class="invalid-feedback">
+            <div>Planned Date is required</div>
+        </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Release Date</label>
+        <input type="date" class="form-control" [(ngModel)]="release.releaseDate" formControlName="rDate" [ngClass]="{'is-invalid': 
+        form.get('rDate').touched && form.get('rDate').invalid}">
+
+        <div class="invalid-feedback">
+            <div>Release Date is required</div>
+        </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Type</label>
+        <select class="form-control" [(ngModel)]="release.type" formControlName="type" [ngClass]="{'is-invalid': 
+        form.get('type').touched && form.get('type').invalid}">
+            <option value="Default">Select a type</option>
+            <option value="MileStone">MileStone</option>
+            <option value="Build">Build</option>
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+            <option value="Final">Final</option>
+        </select>
+        <div class="invalid-feedback">
+            <div>Type is required</div>
+        </div>
+
+    </div>
+    
+    <div class="form_group">
+        <label for="">Stage</label>
+        <select class="form-control" [(ngModel)]="release.stage" formControlName="stage" [ngClass]="{'is-invalid': 
+        form.get('stage').touched && form.get('stage').invalid}">
+            <option value="DevTest">DevTest</option>
+            <option value="QATest">QATest</option>
+            <option value="Stage">Stage</option>
+            <option value="Production">Production</option>
+        </select>
+        
+
+        <div class="invalid-feedback">
+            <div>Stage is required</div>
+        </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Status</label>
+        <select class="form-control" [(ngModel)]="release.status" formControlName="status" [ngClass]="{'is-invalid': 
+        form.get('status').touched && form.get('status').invalid}">
+            <option value = "Planned">Planned</option>
+            <option value="Released">Released</option>
+            <option value="Delayed">Delayed</option>
+            <option value="Suspended">Suspended</option>
+            <option value="Resumed">Resumed</option>
+        </select>
+        <div class="invalid-feedback">
+            <div>Status is required</div>
+        </div>
+
+    </div>
+
+    <div class="form_group">
+        <label for="">Manager</label>
+        <input type="text" class="form-control" [(ngModel)]="release.manager" formControlName="manager" [ngClass]="{'is-invalid': 
+        form.get('manager').touched && form.get('manager').invalid}">
+  
+        <div class="invalid-feedback">
+            <div>Title is required</div>
+        </div>
+      </div>
+
+    <div class="form_group">
+        <input type="hidden" name="version" class="form-control" [(ngModel)]="release.version" [ngModelOptions]="{standalone:true}">
+      </div>
+
+      <br>
+      <input type="submit" value="Add Release" class="btn btn-success">
+  </form>
+  

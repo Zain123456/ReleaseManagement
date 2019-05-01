@@ -1,0 +1,38 @@
+<div class="title-bar">
+    <h1>Iteration Search</h1>
+  </div>
+  
+  <div class="main">
+      <a routerLink="/releaseList" class="btn btn-primary">Back</a>
+      <div class="search-r">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchI" autocomplete="off" placeholder="&#61442;  Start searching for a iteration">
+        </div>
+  
+    <table style="width:100%" class="table table-striped table-dark">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Title</th> 
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>type</th>
+            <th>Release ID</th>
+          </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let iteration of iterations | filter:searchI">
+            <td>{{iteration.iterationId}}</td>
+            <td>{{iteration.title}}</td>
+            <td>{{iteration.description}}</td>
+            <td>{{iteration.startDate}}</td>
+            <td>{{iteration.endDate}}</td>
+            <td>{{iteration.status}}</td>
+            <td>{{iteration.type}}</td>
+            <td>{{iteration.release}}</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>

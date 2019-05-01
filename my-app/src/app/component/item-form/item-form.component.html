@@ -1,0 +1,24 @@
+<div>
+    <h1>Item Form</h1>
+  </div>
+  
+  <br>
+  <h3>Please enter the Item details</h3>
+  
+  <form (ngSubmit)="form.valid && processForm()" name="form" [formGroup]="form">
+    <input type="hidden" name="iterationId" class="form-control" [(ngModel)]="item.itemId" [ngModelOptions]="{standalone:true}">
+
+    <div class="form_group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="item.name" formControlName="name" [ngClass]="{'is-invalid': 
+      form.get('name').touched && form.get('name').invalid}">
+
+      <div class="invalid-feedback">
+          <div>Name is required</div>
+      </div>
+    </div>
+
+    <br>
+    <input type="submit" value="Add item" class="btn btn-success">
+  </form>
+  

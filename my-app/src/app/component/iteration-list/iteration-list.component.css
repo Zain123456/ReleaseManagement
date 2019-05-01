@@ -1,0 +1,40 @@
+table{
+    top: 5px;
+    border: 1px solid black;
+}
+table th{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+table td{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+
+
+.section-a {
+    padding: 30px 0;
+    text-align: center;
+    background: grey;
+    color: #ffffff !important; 
+  }
+    .section-a .fas {
+      font-size: 60px; 
+    }
+
+    .title-bar {
+        background: url(../../../assets/mphasis.jpg) no-repeat 0 -300px;
+        background-size: cover;
+        color: black;
+        border-bottom: 4px solid #005EB8; 
+    }
+
+        .title-bar h1 {
+          margin-top: 0; 
+        }
+
+        .main {
+            margin-top: 30px; 
+        }
