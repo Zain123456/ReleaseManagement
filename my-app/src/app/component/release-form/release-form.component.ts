@@ -32,6 +32,7 @@ export class ReleaseFormComponent implements OnInit {
 
   compareTwoDates(){
     if(new Date(this.form.controls['rDate'].value)<new Date(this.form.controls['sDate'].value)){
+        this.form.controls['rDate'].invalid;
        this.error={isError:true,errorMessage:"Release Date can't before start date"};
     }
  }

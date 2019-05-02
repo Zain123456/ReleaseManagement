@@ -57,12 +57,9 @@
     <label for="">Status</label>
     <select class="form-control" [(ngModel)]="iteration.status" formControlName="status" [ngClass]="{'is-invalid': 
     form.get('status').touched && form.get('status').invalid}">
-        <option value= "Default">Select Status</option>
         <option value = "Planned">Planned</option>
-        <option value="Released">Released</option>
-        <option value="Delayed">Delayed</option>
-        <option value="Suspended">Suspended</option>
-        <option value="Resumed">Resumed</option>
+        <option value="Working">Working</option>
+        <option value="Completed">Completed</option>
     </select>
     <div class="invalid-feedback">
         <div>Status is required</div>
@@ -74,12 +71,11 @@
       <label for="">Type</label>
       <select class="form-control" [(ngModel)]="iteration.type" formControlName="type" [ngClass]="{'is-invalid': 
       form.get('type').touched && form.get('type').invalid}">
-          <option value="Default">Select a type</option>
-          <option value="MileStone">MileStone</option>
-          <option value="Build">Build</option>
-          <option value="Major">Major</option>
-          <option value="Minor">Minor</option>
-          <option value="Final">Final</option>
+          <option value="Dev">Dev</option>
+          <option value="QA">QA</option>
+          <option value="Planning">Planning</option>
+          <option value="Release">Release</option>
+          <option value="Regression">Regression</option>
       </select>
       <div class="invalid-feedback">
           <div>Type is required</div>

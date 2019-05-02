@@ -9,7 +9,7 @@
       <input type="hidden" name="releaseId" class="form-control" [(ngModel)]="release.releaseId" [ngModelOptions]="{standalone:true}">
 
     <div class="form_group">
-      <label for="">Title</label>
+      <label for="">Title*</label>
       <input type="text" class="form-control" [(ngModel)]="release.title" formControlName="title" [ngClass]="{'is-invalid': 
       form.get('title').touched && form.get('title').invalid}">
 
@@ -19,7 +19,7 @@
     </div>
   
     <div class = "form_group">
-      <label for="">Description</label>
+      <label for="">Description*</label>
       <input type="text" class="form-control"  [(ngModel)]="release.description" formControlName="desc" [ngClass]="{'is-invalid': 
       form.get('desc').touched && form.get('desc').invalid}"> 
 
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Start Date</label>
+        <label for="">Start Date*</label>
         <input type="date" class="form-control" [(ngModel)]="release.startDate" formControlName="sDate" [ngClass]="{'is-invalid': 
         form.get('sDate').touched && form.get('sDate').invalid}">
 
@@ -41,7 +41,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Planned Date</label>
+        <label for="">Planned Date*</label>
         <input type="date" class="form-control" [(ngModel)]="release.plannedDate" formControlName="pDate" [ngClass]="{'is-invalid': 
         form.get('pDate').touched && form.get('pDate').invalid}">
 
@@ -52,7 +52,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Release Date</label>
+        <label for="">Release Date*</label>
         <input type="date" class="form-control" [(ngModel)]="release.releaseDate" (blur)="compareTwoDates()" formControlName="rDate" [ngClass]="{'is-invalid': 
         form.get('rDate').touched && form.get('rDate').invalid}">
 
@@ -67,7 +67,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Type</label>
+        <label for="">Type*</label>
         <select class="form-control" [(ngModel)]="release.type" formControlName="type" [ngClass]="{'is-invalid': 
         form.get('type').touched && form.get('type').invalid}">
             <option value="Default">Select a type</option>
@@ -84,7 +84,7 @@
     </div>
     
     <div class="form_group">
-        <label for="">Stage</label>
+        <label for="">Stage*</label>
         <select class="form-control" [(ngModel)]="release.stage" formControlName="stage" [ngClass]="{'is-invalid': 
         form.get('stage').touched && form.get('stage').invalid}">
             <option value="DevTest">DevTest</option>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Status</label>
+        <label for="">Status*</label>
         <select class="form-control" [(ngModel)]="release.status" formControlName="status" [ngClass]="{'is-invalid': 
         form.get('status').touched && form.get('status').invalid}">
             <option value = "Planned">Planned</option>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="form_group">
-        <label for="">Manager</label>
+        <label for="">Manager*</label>
         <input type="text" class="form-control" [(ngModel)]="release.manager" formControlName="manager" [ngClass]="{'is-invalid': 
         form.get('manager').touched && form.get('manager').invalid}">
   
