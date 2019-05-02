@@ -53,12 +53,16 @@
 
     <div class="form_group">
         <label for="">Release Date</label>
-        <input type="date" class="form-control" [(ngModel)]="release.releaseDate" formControlName="rDate" [ngClass]="{'is-invalid': 
+        <input type="date" class="form-control" [(ngModel)]="release.releaseDate" (blur)="compareTwoDates()" formControlName="rDate" [ngClass]="{'is-invalid': 
         form.get('rDate').touched && form.get('rDate').invalid}">
 
         <div class="invalid-feedback">
             <div>Release Date is required</div>
         </div>
+
+        <div *ngIf="error.isError" class="alert alert-danger">
+            {{ error.errorMessage }}
+         </div>
 
     </div>
 

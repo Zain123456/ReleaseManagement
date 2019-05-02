@@ -10,7 +10,7 @@ import { Release } from 'src/app/classes/release';
   styleUrls: ['./release-form.component.css']
 })
 export class ReleaseFormComponent implements OnInit {
-
+  error:any={isError:false,errorMessage:''};
   form = new FormGroup({
     title: new FormControl('',Validators.required),
     desc: new FormControl('',Validators.required),
@@ -21,7 +21,7 @@ export class ReleaseFormComponent implements OnInit {
     stage: new FormControl('',Validators.required),
     status: new FormControl('',Validators.required),
     manager: new FormControl('',Validators.required)
-  })
+  });
   private release:Release;
 
   constructor(private _service:ReleasemanagementService, private _router:Router) { }
@@ -29,6 +29,12 @@ export class ReleaseFormComponent implements OnInit {
   ngOnInit() {
     this.release = this._service.rGetter();
   }
+
+  compareTwoDates(){
+    if(new Date(this.form.controls['rDate'].value)<new Date(this.form.controls['sDate'].value)){
+       this.error={isError:true,errorMessage:"Release Date can't before start date"};
+    }
+ }
 
   processForm(){
     if(this.release.releaseId==undefined){

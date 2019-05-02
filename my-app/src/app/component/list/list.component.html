@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <div class="title-bar">
   <h1>Relaease Table List</h1>
 </div>
@@ -28,23 +28,23 @@
         <td>{{release.releaseId}}</td>
         <td>{{release.title}}</td>
         <td>{{release.description}}</td>
-        <td>{{release.startDate}}</td>
-        <td>{{release.plannedDate}}</td>
-        <td>{{release.releaseDate}}</td>
+        <td>{{release.startDate | date}}</td>
+        <td>{{release.plannedDate | date}}</td>
+        <td>{{release.releaseDate | date}}</td>
         <td>{{release.type}}</td>
         <td>{{release.stage}}</td>
         <td>{{release.status}}</td>
         <td>{{release.manager}}</td>
         <td>{{release.version}}</td>
         <td>
-          <button class="btn btn-danger"  (click)="deleteRelease(release)">Delete</button>&nbsp; &nbsp;
-          <button class="btn btn-primary" (click)="updateRelease(release)">Update</button>&nbsp; &nbsp;
-          <button class="btn btn-primary" (click)="addIteration(release)">Add Iteration</button> &nbsp; &nbsp;
-          <button class="btn btn-primary" (click)="addItem(release)">Add Items</button>&nbsp; &nbsp;
-          <br>
-          <br>
-          <button class="btn btn-primary" (click)="getIterationById(release)">View Iterations</button>&nbsp; &nbsp;
-          <button class="btn btn-primary" (click)="getItemsById(release)">View Items</button>
+              <button class="btn btn-danger"  (click)="deleteRelease(release)">Delete</button>&nbsp; &nbsp;
+              <button class="btn btn-primary" (click)="updateRelease(release)">Update</button>&nbsp; &nbsp;
+              <button class="btn btn-primary" (click)="addIteration(release)">Add Iteration</button> &nbsp; &nbsp;
+              <button class="btn btn-primary" (click)="addItem(release)">Add Items</button>&nbsp; &nbsp;
+              <br>
+              <br>
+              <button class="btn btn-primary" (click)="getIterationById(release)">View Iterations</button>&nbsp; &nbsp;
+              <button class="btn btn-primary" (click)="getItemsById(release)">View Items</button>
         </td>
     </tr>
   </tbody>
